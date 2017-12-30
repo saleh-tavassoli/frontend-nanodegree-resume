@@ -10,7 +10,7 @@ var bio = {
     'welcomeMessage': 'Hi. I work as Frontend developer in Berlin. I love my' +
         'profession. I boost my work quality and efficiency by continuous' +
         'learning by doing strategy. Goal and result oriented when coding.' +
-        <br> 'I’m currently working full-time but I have an eye for new ' +
+        '<br> I’m currently working full-time but I have an eye for new ' +
         'opportunities on freelancing or full-time positions(Remote or Berlin)',
     'skills': [
         'Awesomeness', 'Programming', 'HTML', 'CSS', 'JavaScript', 'jQuery',
@@ -120,7 +120,7 @@ var work = {
             'title': 'Frontend Developer',
             'location': 'Berlin',
             'dates': '2016 - 2017',
-            'description': 'Developing Frontend for various projects<br>Installing, preparing and' +'configuring the base for the projects such as GIT and Bash scripting when needed'+<br>' Projects all managed and developed from scratch:<br>'
+            'description': 'Developing Frontend for various projects<br>Installing, preparing and' +'configuring the base for the projects such as GIT and Bash scripting when needed <br>'+' Projects all managed and developed from scratch:<br>'
         },
         {
             'employer': 'CERN',
