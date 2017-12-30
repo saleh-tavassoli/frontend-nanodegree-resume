@@ -2,27 +2,39 @@ var bio = {
     'name': 'Mahmoud (Saleh) Joz Tavassoli',
     'role': 'Web Developer',
     'contacts': {
+        'mobile': '000-0000',
         'email': 'm.s.j.tavassoli@gmail.com',
         'location': 'Berlin',
+        'github': 'saleh-tavassoli'
     },
-    'welcomeMessage': 'Hi. I work as Frontend developer in Berlin. I love my profession. I boost my work quality and efficiency by continuous learning by doing strategy. Goal and result oriented when coding. <br> I’m currently working full-time but I have an eye for new opportunities on freelancing or full-time positions (Remote or Berlin)',
+    'welcomeMessage': 'Hi. I work as Frontend developer in Berlin. I love my' +
+        'profession. I boost my work quality and efficiency by continuous' +
+        'learning by doing strategy. Goal and result oriented when coding.' +
+        <br> 'I’m currently working full-time but I have an eye for new ' +
+        'opportunities on freelancing or full-time positions(Remote or Berlin)',
     'skills': [
-        'Awesomeness', 'Programming', 'HTML', 'CSS', 'JavaScript', 'jQuery', 'Bootstrap', 'SASS', 'LESS', 'Git', 'PHP', 'MySql', 'Smarty'
+        'Awesomeness', 'Programming', 'HTML', 'CSS', 'JavaScript', 'jQuery',
+        'Bootstrap', 'SASS', 'LESS', 'Git', 'PHP', 'MySql', 'Smarty'
     ],
-    'bioPic': 'images/Saleh.jpg',
+    'bioPic': 'images/saleh.jpg',
     'display': function() {
-        var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
-        var formattedName = HTMLheaderName.replace('%data%', bio.name);
-        var formattedbioPic = HTMLbioPic.replace('%data%', bio.bioPic);
-        var formattedWelcomeMsg = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
-        var formattedEmail = HTMLemail.replace('%data%', bio.contacts.email);
-        var formattedLocation = HTMLlocation.replace('%data%', bio.contacts.location);
+        var data = '%data%';
+        var formattedRole = HTMLheaderRole.replace(data, bio.role);
+        var formattedName = HTMLheaderName.replace(data, bio.name);
+        var formattedbioPic = HTMLbioPic.replace(data, bio.bioPic);
+        var formattedWelcomeMsg = HTMLwelcomeMsg.replace(data, bio.welcomeMessage);
+        var formattedEmail = HTMLemail.replace(data, bio.contacts.email);
+        var formattedLocation = HTMLlocation.replace(data, bio.contacts.location);
+        var formattedMobile = HTMLmobile.replace(data, bio.contacts.mobile);
+        var formattedGithub = HTMLgithub.replace(data, bio.contacts.github);
         $('#header').prepend(formattedRole);
         $('#header').prepend(formattedName);
         $('#header').append(formattedbioPic);
         $('#header').append(formattedWelcomeMsg);
-        $('#topContacts').append(formattedEmail);
-        $('#topContacts').append(formattedLocation);
+        $('#topContacts, #footerContacts').append(formattedEmail);
+        $('#topContacts, #footerContacts').append(formattedLocation);
+        $('#topContacts, #footerContacts').append(formattedMobile);
+        $('#topContacts, #footerContacts').append(formattedGithub);
         $('#header').append(HTMLskillsStart);
         bio.skills.forEach(function(skill) {
             var formattedSkill = HTMLskills.replace('%data%', skill);
@@ -36,14 +48,14 @@ var education = {
         'location': 'Karlsruhe',
         'degree': 'MA',
         'majors': ['Optics'],
-        'dates': 2013,
+        'dates': '2013',
         'url': 'http://www.kit.edu/'
     }],
     'onlineCourses': [
         {
             'title': 'FEND',
             'school': 'Udacity',
-            'date': '2016',
+            'dates': '2016',
             'url': 'www.udacity.com'
         }
     ],
@@ -69,7 +81,9 @@ var projects = {
         {
             'title': 'Premium Energy',
             'dates': '2016',
-            'description': '<a href="https://www.premium.energy/">www.premium.energy</a>  (E-commerce, Prestashop)<br>Technology stack: JavaScript, jQuery, HTML5, CSS3, Bootstrap, SASS, Smarty, PHP, Git',
+            'description': '<a href="https://www.premium.energy/">www.premium.energy</a>' +
+                ' (E-commerce, Prestashop)<br>Technology stack: JavaScript, jQuery, HTML5, CSS3,' +
+                'Bootstrap, SASS, Smarty, PHP, Git',
             'images': [
                 'images/PremiumEnergy.jpg', 'images/PremiumEnergy-Screens.jpg'
                 ]
@@ -106,7 +120,7 @@ var work = {
             'title': 'Frontend Developer',
             'location': 'Berlin',
             'dates': '2016 - 2017',
-            'description': 'Developing Frontend for various projects<br>Installing, preparing and configuring the base for the projects such as GIT and Bash scripting when needed<br>Projects all managed and developed from scratch:<br>'
+            'description': 'Developing Frontend for various projects<br>Installing, preparing and' +'configuring the base for the projects such as GIT and Bash scripting when needed'+<br>' Projects all managed and developed from scratch:<br>'
         },
         {
             'employer': 'CERN',
