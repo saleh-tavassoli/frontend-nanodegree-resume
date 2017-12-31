@@ -16,12 +16,12 @@ var bio = {
         'Awesomeness', 'Programming', 'HTML', 'CSS', 'JavaScript', 'jQuery',
         'Bootstrap', 'SASS', 'LESS', 'Git', 'PHP', 'MySql', 'Smarty'
     ],
-    'bioPic': 'images/saleh.jpg',
+    'biopic': 'images/saleh.jpg',
     'display': function() {
         var data = '%data%';
         var formattedRole = HTMLheaderRole.replace(data, bio.role);
         var formattedName = HTMLheaderName.replace(data, bio.name);
-        var formattedbioPic = HTMLbioPic.replace(data, bio.bioPic);
+        var formattedbiopic = HTMLbioPic.replace(data, bio.biopic);
         var formattedWelcomeMsg = HTMLwelcomeMsg.replace(data, bio.welcomeMessage);
         var formattedEmail = HTMLemail.replace(data, bio.contacts.email);
         var formattedLocation = HTMLlocation.replace(data, bio.contacts.location);
@@ -29,7 +29,7 @@ var bio = {
         var formattedGithub = HTMLgithub.replace(data, bio.contacts.github);
         $('#header').prepend(formattedRole);
         $('#header').prepend(formattedName);
-        $('#header').append(formattedbioPic);
+        $('#header').append(formattedbiopic);
         $('#header').append(formattedWelcomeMsg);
         $('#topContacts, #footerContacts').append(formattedEmail);
         $('#topContacts, #footerContacts').append(formattedLocation);
@@ -56,23 +56,34 @@ var education = {
             'title': 'FEND',
             'school': 'Udacity',
             'dates': '2016',
-            'url': 'www.udacity.com'
+            'url': 'http://www.udacity.com'
         }
     ],
     'display': function() {
+        var data = '%data%';
         education.schools.forEach(function(school) {
             $('#education').append(HTMLschoolStart);
-            var formattedSchoolName = HTMLschoolName.replace('%data%', school.name);
-            var formattedSchoolDegree = HTMLschoolDegree.replace('%data%', school.degree);
-            var formattedSchoolDates = HTMLschoolDates.replace('%data%', school.dates);
-            var formattedSchoolLocation = HTMLschoolLocation.replace('%data%', school.location);
-            var formattedSchoolMajor = HTMLschoolMajor.replace('%data%', school.majors);
+            var formattedSchoolName = HTMLschoolName.replace(data, school.name);
+            var formattedSchoolDegree = HTMLschoolDegree.replace(data, school.degree);
+            var formattedSchoolDates = HTMLschoolDates.replace(data, school.dates);
+            var formattedSchoolLocation = HTMLschoolLocation.replace(data, school.location);
+            var formattedSchoolMajor = HTMLschoolMajor.replace(data, school.majors);
             var formattedSchoolURL = HTMLschoolURL.replace(/%data%/g, school.url);
             $('.education-entry:last').append(formattedSchoolName + formattedSchoolDegree);
             $('.education-entry:last').append(formattedSchoolDates);
             $('.education-entry:last').append(formattedSchoolLocation);
             $('.education-entry:last').append(formattedSchoolMajor);
             $('.education-entry:last').append(formattedSchoolURL);
+        });
+        education.onlineCourses.forEach(function(course){
+            $('#education').append(HTMLonlineClasses);
+            var formattedOnlineTitle = HTMLonlineTitle.replace(data, course.title);
+            var formattedOnlineSchool = HTMLonlineSchool.replace(data, course.school);
+            var formattedOnlineDates = HTMLonlineDates.replace(data, course.dates);
+            var formattedOnlineURL = HTMLonlineURL.replace(data, course.url);
+            $('.online-entry:last').append(formattedOnlineTitle + formattedOnlineSchool);
+            $('.online-entry:last').append(formattedOnlineDates);
+            $('.online-entry:last').append(formattedOnlineURL);
         });
     }
 };
@@ -139,7 +150,7 @@ var work = {
             var formattedLocation = HTMLworkLocation.replace('%data%', job.location);
             var formattedDescription = HTMLworkDescription.replace('%data%', job.description);
             $('.work-entry:last').append(formattedEmployer + formattedTitle);
-            $('.work-entry:last').append(formattedLocation + formattedDates);
+            $('.work-entry:last').append(formattedLocation, formattedDates);
             $('.work-entry:last').append(formattedDescription);
         });
     }
